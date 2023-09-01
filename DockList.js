@@ -1,4 +1,4 @@
-import { getDocks } from "./database.js"
+import { getDocks} from "./database.js"
 
 
 export const DockList = () => {
@@ -8,10 +8,14 @@ export const DockList = () => {
 
     for (const dock of docks) {
         // Convert each dock object to an <li> and append to the docksHTML string
-        docksHTML += `<li>${dock.location}</li>`
+        docksHTML += `<li 
+                        data-type="dock"
+                        dock-id="${dock.id}"
+                        >${dock.location}</li>`
     }
 
     docksHTML += "</ul>"
 
     return docksHTML
 }
+

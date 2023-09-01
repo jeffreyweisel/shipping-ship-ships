@@ -17,7 +17,7 @@ const database = {
 
     shippingShips: [
         {id: 1, name: "Esso Atlantic", haulerId:1},
-        {id: 1, name: "Prairial", haulerId: 2},
+        {id: 2, name: "Prairial", haulerId: 2},
         {id: 3, name: "Palais Royal", haulerId: 3},
         {id: 4, name: "Rivoli", haulerId: 4},
         {id: 5, name: "Champs Elysee", haulerId: 5},
