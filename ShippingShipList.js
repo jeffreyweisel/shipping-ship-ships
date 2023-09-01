@@ -3,7 +3,14 @@ import { getHaulingShips, getShippingShips } from "./database.js"
 
 export const shippingShipList = () => {
     const shippingShips = getShippingShips()
-
+    
+    //Sort shipping ships alphabetically
+    shippingShips.sort(function(a, b){
+        if(a.name < b.name) { return -1; }
+        if(a.name > b.name) { return 1; }
+        return 0;
+})
+    //Create shipping ship html
     let shippingShipsHTML = "<ul>"
 
     for (const ship of shippingShips) {
@@ -20,6 +27,11 @@ export const shippingShipList = () => {
     return shippingShipsHTML
 }
 
+
+
+
+//Create click event that shows what hauler is hauling each shipping ship
+
 // Was a shipping ship list item clicked?
 // Get the haulerId value of the shipping ship clicked
 // Define a default object for the found hauler
@@ -35,8 +47,7 @@ export const shippingShipList = () => {
     (clickEvent) => {
        
         const itemClicked = clickEvent.target
-        console.log(itemClicked)
-        console.log(itemClicked.dataset)
+        
         
         
         if(itemClicked.dataset.type === "shippingship") {
@@ -48,20 +59,18 @@ export const shippingShipList = () => {
             const shipHaulers = getHaulingShips()
             for (const hauler of shipHaulers) {
                 if(hauler.id == shipHaulerId){
-                    haulingShip = hauler;
+                    haulingShip = hauler
                 }
-                
-                
             }
             
             window.alert(`${itemClicked.dataset.name} is being hauled by ${haulingShip.name}`)
+                
         }
-
     }
+
 )
+                
+            
 
 
-// The type of item was clicked (i.e. a shipping ship was clicked).
-// The haulerId value of the shipping ship that was clicked.
-// The name of the shipping ship that was clicked.
-// The array of haulers so that it can be iterated.
+

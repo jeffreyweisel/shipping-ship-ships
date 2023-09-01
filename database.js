@@ -7,9 +7,9 @@ const database = {
     ],
 
     haulers: [
-        {id: 1, name: "Pioneering Spirit", dockId: 1},
+        {id: 1, name: "Pioneering Spirit", dockId: 3},
         {id: 2, name: "Boaty McBoatface", dockId: 2},
-        {id: 3, name: "Seawise Giant", dockId: 3},
+        {id: 3, name: "Seawise Giant", dockId: 2},
         {id: 4, name: "Black Pearl", dockId: 4},
         {id: 5, name: "Flying Dutchman", dockId: 1},
         {id: 6, name: "Flounder Pounder", dockId: 2}
